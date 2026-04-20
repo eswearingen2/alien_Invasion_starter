@@ -6,9 +6,9 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
 
 class Bullet(Sprite):
+
     def __init__(self, game: 'AlienInvasion'):
         super().__init__()
-        
         self.screen = game.screen
         self.settings = game.settings
 
@@ -17,6 +17,7 @@ class Bullet(Sprite):
             (self.settings.bullet_w, self.settings.bullet_h)
             )
         
+        # 
         self.rect = self.image.get_rect()
         self.rect.midtop = game.ship.rect.midtop
         self.y = float(self.rect.y)

@@ -5,11 +5,8 @@ if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
     from arsenal import Arsenal
 
+class Ship:
 
-
-class Ship: 
-    
-    
     def __init__(self, game: 'AlienInvasion', arsenal: 'Arsenal'):
         self.game = game
         self.settings = game.settings
@@ -21,15 +18,20 @@ class Ship:
             (self.settings.ship_w, self.settings.ship_h)
             )
         
+        # Ship positioning
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.boundaries.midbottom
+        self.x = float(self.rect.x)
+
+        # Ship moving
         self.moving_right = False
         self.moving_left = False
-        self.x = float(self.rect.x)
-        self.arsenal = arsenal
 
+        # Ship arsenal
+        self.arsenal = arsenal
+    
     def update(self):
-        # updating the posistion of the ship
+        # updating the position of the ship
         self._update_ship_movement()
         self.arsenal.update_arsenal()
 
@@ -42,10 +44,10 @@ class Ship:
 
         self.rect.x = self.x
 
+
     def draw(self):
         self.arsenal.draw()
         self.screen.blit(self.image, self.rect)
-    
+
     def fire(self):
         return self.arsenal.fire_bullet()
-    
