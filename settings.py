@@ -8,6 +8,8 @@ class Settings:
         self.FPS = 60
         self.bg_file = base_path / 'Assets'/ 'images' / 'Starbasesnow.png'
         self.difficulty_scale = 1.1
+        self.scores_file = base_path / 'Assets' / 'file' /'scores.json'
+        
         self.ship_file = base_path / 'Assets' / 'images' / 'ship2(no bg).png'
         self.ship_w = 40
         self.ship_h = 60
