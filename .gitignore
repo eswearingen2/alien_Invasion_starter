@@ -6,3 +6,7 @@ __pycache__/settings.cpython-314.pyc
 __pycache__/ship.cpython-314.pyc
 __pycache__/alien.cpython-314.pyc
 __pycache__/alien_fleet.cpython-314.pyc
+__pycache__/button.cpython-314.pyc
+.gitignore
+.gitignore
+__pycache__/game_stats.cpython-314.pyc
